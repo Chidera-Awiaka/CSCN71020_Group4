@@ -18,12 +18,12 @@
     <ClCompile Include="main.c">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="triangleSolver.c">
+    <ClCompile Include="recatngleSolver.c">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="triangleSolver.h">
+    <ClInclude Include="rectangleSolver.h">
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="main.h">

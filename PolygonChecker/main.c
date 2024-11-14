@@ -1,64 +1,37 @@
+
 #include <stdio.h>
 #include <stdbool.h>
-
-#include "main.h"
-#include "triangleSolver.h"
-
-int side = 0;
+#include "rectanglesolver.h"
 
 int main() {
-	bool continueProgram = true;
-	while (continueProgram) {
-		printWelcome();
+    struct Point p1, p2, p3, p4;
+    double side1, side2;
 
-		int shapeChoice = printShapeMenu();
+    // Input four points
+    printf("Enter coordinates of point 1 (x y): ");
+    scanf("%lf %lf", &p1.x, &p1.y);
+    printf("Enter coordinates of point 2 (x y): ");
+    scanf("%lf %lf", &p2.x, &p2.y);
+    printf("Enter coordinates of point 3 (x y): ");
+    scanf("%lf %lf", &p3.x, &p3.y);
+    printf("Enter coordinates of point 4 (x y): ");
+    scanf("%lf %lf", &p4.x, &p4.y);
 
-		switch (shapeChoice)
-		{
-		case 1:
-			printf_s("Triangle selected.\n");
-			int triangleSides[3] = { 0, 0, 0 };
-			int* triangleSidesPtr = getTriangleSides(triangleSides);
-			//printf_s("! %d\n", triangleSidesPtr[0]);
-			char* result = analyzeTriangle(triangleSidesPtr[0], triangleSidesPtr[1], triangleSidesPtr[2]);
-			printf_s("%s\n", result);
-			break;
-		case 0:
-			continueProgram = false;
-			break;
-		default:
-			printf_s("Invalid value entered.\n");
-			break;
-		}
-	}
-	return 0;
-}
+    // Calculate side lengths
+    side1 = distance(p1, p2);
+    side2 = distance(p2, p3);
 
-void printWelcome() {
-	printf_s("\n");
-	printf_s(" **********************\n");
-	printf_s("**     Welcome to     **\n");
-	printf_s("**   Polygon Checker  **\n");
-	printf_s(" **********************\n");
-}
+    // Check if points form a rectangle
+    if (isRectangle(p1, p2, p3, p4)) {
+        double perimeter = calculatePerimeter(side1, side2);
+        double area = calculateArea(side1, side2);
+        printf("The points form a rectangle.\n");
+        printf("Perimeter: %.2f\n", perimeter);
+        printf("Area: %.2f\n", area);
+    }
+    else {
+        printf("The points do not form a rectangle.\n");
+    }
 
-int printShapeMenu() {
-	printf_s("1. Triangle\n");
-	printf_s("0. Exit\n");
-
-	int shapeChoice;
-
-	printf_s("Enter number: ");
-	scanf_s("%1o", &shapeChoice);
-
-	return shapeChoice;
-}
-
-int* getTriangleSides(int* triangleSides) {
-	printf_s("Enter the three sides of the triangle: ");
-	for (int i = 0; i < 3; i++)
-	{
-		scanf_s("%d", &triangleSides[i]);
-	}
-	return triangleSides;
+    return 0;
 }
