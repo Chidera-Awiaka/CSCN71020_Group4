@@ -14,3 +14,9 @@ namespace RectangleTest
             int points[4][2] = { {0, 0}, {0, 2}, {3, 2}, {3, 0} };
             Assert::IsTrue(isRectangle(points));
         }
+
+        TEST_METHOD(TestRectanglePerimeter)
+        {
+            double perimeter = calculatePerimeter(3.0, 2.0);
+            Assert::AreEqual(10.0, perimeter);
+        }
