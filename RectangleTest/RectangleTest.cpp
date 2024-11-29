@@ -1,6 +1,12 @@
 #include "pch.h"
 #include "CppUnitTest.h"
 
+
+extern "C"
+{
+#include "../PolygonChecker/rectangleSolver.h"
+}
+
 using namespace Microsoft::VisualStudio::CppUnitTestFramework;
 
 namespace RectangleTest
