@@ -9,7 +9,7 @@ extern "C"
 
 using namespace Microsoft::VisualStudio::CppUnitTestFramework;
 
-namespace RectangleTest
+namespace RectangleTest 
 {
     TEST_CLASS(RectangleTest)
     {
