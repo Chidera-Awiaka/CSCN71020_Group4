@@ -31,3 +31,17 @@ double calculateArea(double d1, double d2)
 {
     return d1 * d2;
 }
+
+void processRectangle(int points[4][2]) {
+    if (isRectangle(points)) {
+        double d1 = calculateDistance(points[0][0], points[0][1], points[1][0], points[1][1]);
+        double d2 = calculateDistance(points[1][0], points[1][1], points[2][0], points[2][1]);
+
+        printf("The points form a rectangle.\\n");
+        printf("Perimeter: %.2f\\n", calculatePerimeter(d1, d2));
+        printf("Area: %.2f\\n", calculateArea(d1, d2));
+    }
+    else {
+        printf("The points do not form a rectangle.\\n");
+    }
+}
