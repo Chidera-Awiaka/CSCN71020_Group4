@@ -13,3 +13,8 @@ namespace TriangleTest
         {
             Assert::AreEqual("Equilateral triangle", analyzeTriangle(5, 5, 5));
         }
+
+        TEST_METHOD(TestIsoscelesTriangle)
+        {
+            Assert::AreEqual("Isosceles triangle", analyzeTriangle(5, 5, 3));
+        }
