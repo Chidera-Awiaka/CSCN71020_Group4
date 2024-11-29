@@ -1,5 +1,9 @@
 #include "pch.h"
 #include "CppUnitTest.h"
+extern "C"
+{
+#include "../PolygonChecker/triangleSolver.h"
+}
 
 using namespace Microsoft::VisualStudio::CppUnitTestFramework;
 
@@ -23,3 +27,10 @@ namespace TriangleTest
         {
             Assert::AreEqual("Scalene triangle", analyzeTriangle(3, 4, 5));
         }
+
+        TEST_METHOD(TestNotATriangle)
+        {
+            Assert::AreEqual("Not a triangle", analyzeTriangle(1, 2, 3));
+        }
+    };
+}
