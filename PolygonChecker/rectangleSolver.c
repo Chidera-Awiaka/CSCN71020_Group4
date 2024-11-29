@@ -19,3 +19,9 @@ bool isRectangle(int points[4][2]) {
 
     return (d1 == d3 && d2 == d4 && diag1 == diag2);
 }
+
+// Function to calculate the perimeter of a rectangle
+double calculatePerimeter(double d1, double d2) 
+{
+    return 2 * (d1 + d2);
+}
