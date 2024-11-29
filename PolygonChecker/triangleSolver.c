@@ -1,7 +1,11 @@
 #include <stdio.h>
 #include <stdbool.h>
+#include <math.h> // For trigonometric functions
 
 #include "triangleSolver.h"
+
+#define PI 3.14159265358979323846
+
 
 char* analyzeTriangle(int side1, int side2, int side3) {
 	char* result = "";
@@ -22,3 +26,4 @@ char* analyzeTriangle(int side1, int side2, int side3) {
 
 	return result;
 }
+
