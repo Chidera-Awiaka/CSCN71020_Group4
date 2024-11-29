@@ -25,3 +25,9 @@ double calculatePerimeter(double d1, double d2)
 {
     return 2 * (d1 + d2);
 }
+
+// Function to calculate the area of a rectangle
+double calculateArea(double d1, double d2) 
+{
+    return d1 * d2;
+}
