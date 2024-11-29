@@ -20,3 +20,11 @@ namespace RectangleTest
             double perimeter = calculatePerimeter(3.0, 2.0);
             Assert::AreEqual(10.0, perimeter);
         }
+
+        TEST_METHOD(TestRectangleArea)
+        {
+            double area = calculateArea(3.0, 2.0);
+            Assert::AreEqual(6.0, area);
+        }
+    };
+}
